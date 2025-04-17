@@ -1,0 +1,30 @@
+{
+  "$schema": "",
+  "title": "Catalog Item",
+  "type": "object",
+  "properties": {
+    "field_a": {
+      "type": "string",
+      "minLength": 1
+    },
+    "field_b": {
+      "type": "string"
+    },
+    "field_c": {
+      "type": "string",
+      "enum": ["R", "B", "G"]
+    },
+    "field_d": {
+      "type": "int",
+      "minimum": 0
+    },
+    "field_e": {
+      "type": "string",
+      "format": "email"
+    },
+    "required": ["field_a", "field_c", "field_d", "field_e"],
+    "dependentRequired": {
+      "field_b": ["field_a"]
+    }
+  }
+}
